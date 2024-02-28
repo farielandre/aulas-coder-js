@@ -1,18 +1,18 @@
 // Calculadora de juros compostos. A fórmula dos juros compostos é M = C * (1 + i)^t
 
-function jurosComposto(){
+function jurosComposto() {
     const valorInicial = parseInt(prompt('Digite o valor inicial em R$'));
     const taxaJuros = parseInt(prompt('Qual a taxa mensal de juros em %? Digite apenas o numero.'));
     const periodoMeses = parseInt(prompt('Por quantos meses incidirão os juros?'));
     let montante = valorInicial * (1 + (taxaJuros / 100)) ** periodoMeses;
-    alert('O valor total em' + ' ' + periodoMeses + ' ' + 'meses será de:' + ' ' + 'R$' + parseFloat(montante).toFixed([2]))
+    alert('O valor total em' + ' ' + periodoMeses + ' ' + 'meses será de:' + ' ' + 'R$' + parseFloat(montante).toFixed([2]));
 }
 
 // Função para descobrir o signo
 
 function descobrirSigno() {
     const mes = prompt('Digite o mês em que você nasceu por extenso (ex: Agosto)').toUpperCase(); // toUpperCase() para padronizar todos os nomes de meses e prevenir erros de maiúsculas/minúsculas.
-    const dia = prompt('Digite o dia em que você nasceu (ex: 01, 04, 21)');
+    const dia = parseInt(prompt('Digite o dia em que você nasceu (ex: 01, 04, 21)'));
     const espaco = ' ';
     const primeiraLetraMaiuscula = mes.charAt(0).toUpperCase() + mes.slice(1).toLowerCase(); // Padronizando o resultado com iniciais maiúsculas
 
@@ -71,8 +71,28 @@ function descobrirSigno() {
 }
 
 
-// // // Arrow function
+// Calculadora de idade nos planetas do sistema solar
+// Ref: https://www.invivo.fiocruz.br/cienciaetecnologia/quantos-anos-voce-tem/
+// Ref2: https://exercism.org/tracks/javascript/exercises/space-age
 
-// // const minhaFuncao = (num1, num2) => {
-// //     console.log(num1 / num2);
-// // }
+function idadeOutrosPlanetas() {
+    const idadeAtual = parseInt(prompt('Quantos anos de vida você tem? Digite apenas números.'));
+    const espaco = ' ';
+    const mercurio = 'Em Mercúrio você teria' + espaco + (idadeAtual / 0.2408).toFixed([2]) + espaco + 'anos.\n';
+    const venus = 'Em Vênus você teria' + espaco + (idadeAtual / 0.6151).toFixed([2]) + espaco + 'anos.\n';
+    const terra = 'Na Terra você tem' + espaco + (idadeAtual / 1) + espaco + 'anos.\n';
+    const marte = 'Em Marte você teria' + espaco + (idadeAtual / 1.8808).toFixed([2]) + espaco + 'anos.\n';
+    const jupiter = 'Em Júpiter você teria' + espaco + (idadeAtual / 11.8626).toFixed([2]) + espaco + 'anos.\n';
+    const saturno = 'Em Saturno você teria' + espaco + (idadeAtual / 29.4474).toFixed([2]) + espaco + 'anos.\n';
+    const urano = 'Em Urano você teria' + espaco + (idadeAtual / 84.0168).toFixed([2]) + espaco + 'anos.\n';
+    const netuno = 'Em Netuno você teria' + espaco + (idadeAtual / 164.7913).toFixed([2]) + espaco + 'anos.\n';
+    const plutao = 'Plutão não é mais considerado um planeta. Mas o dia por lá dura cerca de 153 horas. Partiu Plutão?';
+    const linhaEmBranco = '\n';
+    const aviso = 'Isso tudo pra dizer que, quanto mais longe do sol menor é nossa idade!';
+    
+    if (!isNaN (idadeAtual)) {
+        alert(terra + mercurio + venus + marte + jupiter + saturno + urano + netuno + plutao + linhaEmBranco + aviso);
+    } else {
+        alert('Você não digitou um número. Digite um número.');
+    }
+}
