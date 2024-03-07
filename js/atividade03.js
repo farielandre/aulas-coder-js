@@ -9,7 +9,14 @@ function calcParcelas() {
             let resultado = parseFloat(numero1 / i).toFixed([2]);
             console.log(`Se você parcelar sua compra em ${i} vezes, dará R$${resultado} sem juros por parcela`)
         }
-    } else {
+    } 
+    //// Tentei esse controle de erro abaixo e não funcionou direito. Ele ativa a operação mesmo que eu não digite nada.
+
+    // else if (isNaN(numero1) && isNaN(numero2)){
+    //     console.log('Você não digitou um número. Digite um número.')
+    // }
+
+    else {
         console.log(`O valor de sua compra em 1 vez é R$${parseFloat(numero1).toFixed([2])}`)
     }
 } 
