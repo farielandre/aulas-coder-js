@@ -1,50 +1,68 @@
-// //exemplo for
+// // Objeto 1
 
-// let numero = 15;
+// const xicara = {
+//     cor: 'branca',
+//     capacidade: '200ml',
+//     quebrada: true,
+//     preco: 27.50
+// }
+// console.log('a xícara é:', xicara.cor);
+// xicara.cor = 'amarela' // forma 1 de mudar a variável
+// console.log('a xícara agora é:', xicara.cor);
 
-// for (let i = 0; i < numero; i++){
-//     console.log('oi')
+// // Objeto 2
+
+// const stopJogo = {
+//     cidade: 'Floripa',
+//     estado: 'SC',
+//     país: 'Brasil',
+//     numero: 1
 // }
 
-// // exemplo while 
+// console.log('a cidade é:', stopJogo.cidade);
+// stopJogo['cidade'] = 'São Paulo' // forma 2 de mudar a variável
+// console.log('a cidade agora é:', stopJogo.cidade);
 
-// while (contador != 10){
-//     contador++
-//     console.log('Diferente de 10')
+// // Constructor e New
+
+// function fruta(nome, cor, peso) {
+//     this.nome = nome;
+//     this.cor = cor;
+//     this.peso = peso;
 // }
 
-// // exemplo while 2
+// const fruta1 = new fruta("branca", 102, false);
+// const fruta2 = new fruta("rosa", 200, true);
 
-// let info = prompt('Digite um nome:')
+// console.log(fruta1)
+// console.log(fruta2)
 
-// while (info != 'PARAR'){
-//     console.log(info)
-//     info = prompt('Digite um nome:')
+// // Métodos - REVISAR
+
+// function fruta(nome, cor, peso) {
+//     this.nome = nome;
+//     this.cor = cor;
+//     this.peso = peso;
+//     detalhesFruta = function () {
+//         console.log('A fruta: ' + this.nome + ' é ' + this.cor + ' e pesa: ' + this.peso)
+//     }
 // }
+// const fruta1 = new fruta('arroz', 'branco', 123);
+// console.log(detalhesFruta())
 
-// Exercício 1 - Par ímpar
+// // Classes e Métodos
 
-// let numero = parseInt(prompt('Digite um numero e direi se ele é par ou ímpar'));
-
-// if (numero %2===0){
-//     console.log('O número é par');
-// } else {
-//     console.log('O número é ímpar')
+// class Alimento {
+//     constructor(nome, cor, peso) {
+//         this.nome = nome;
+//         this.cor = cor;
+//         this.peso = peso;
+//     }
+//     descricao() {
+//         console.log(`O alimento ${this.nome} é ${this.cor} e pesa ${this.peso}`)
+//     }
 // }
-
-// Exercício 2 - Estações do ano
-
-// let mes = prompt('Digite um mês do ano e direi a qual estação ele pertence:').toLowerCase();
-
-// if (mes === 'dezembro' || mes === 'janeiro' || mes === 'fevereiro' || mes === 'março'){
-//     console.log('Estação Verão')
-// } else if (mes === 'abril' || mes === 'maio' || mes === 'junho'){
-//     console.log('Estação Outono')
-// } else if (mes === 'julho' || mes === 'agosto' || mes === 'setembro'){
-//     console.log('Estação Inverno')
-// } else if (mes === 'outubro' || mes === 'novembro'){
-//     console.log('Estação Primavera')
-// } else {
-//     console.log('Digite um mês')
-// }
-
+// const Alimento1 = new Alimento('arroz', 'branco', 123 + ' gramas');
+// const Alimento2 = new Alimento('macarrão', 'amarelo', 100 + ' gramas');
+// Alimento1.descricao();
+// Alimento2.descricao();
